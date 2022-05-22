@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    
+    <!--Fuente-->
+    <link href="http://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="/resources/css/login.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-dark">
+        <div class="container-fluid">
+            <a href="/"><img class="navbar-brand" src="/assets/img/calendar.svg"></a>
+        </div>
+    </nav>
+    
+
+    <section class="container p-0">
+        <div class="row g-0">
+            <div class="col-12 col-lg-6 fondo"></div>
+            <div class="col-12 col-lg-5 ps-lg-5 pe-5 pe-lg-0">
+                <div>
+                    <h1 class="px-lg-5 py-lg-4 p-4">Bienvenido de vuelta</h1>
+
+                    <form action="/auth" method="POST">
+                        <div class="mb-3">
+                          <label for="user" class="form-label">Usuario</label>
+                          <input type="text" name="user" class="form-control py-4 mb-3" placeholder="Ingrese su nombre de usuario">
+                        <div class="mb-3">
+                          <label for="pass" class="form-label">Contraseña</label>
+                          <input type="password" name="pass" class="form-control py-4 mb-3" placeholder="Ingrese su contraseña">
+                          <div class="form-text">¿No tienes cuenta? <a href="/register">Regístrate</a></div>
+                        </div>
+                        </div>
+                        <input type="submit" value="Iniciar Sesión" class="btn btn-primary fs-3 px-4 w-100 mb-5 py-3"></input>
+                      </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <% if (typeof alert != "undefined") { %>
+         <script>
+             Swal.fire({
+                icon: '<%=alertIcon %>',
+                title: '<%= alertTitle %>',
+                text: '<%= alertMessage%>',
+                ShowConfirmButton: <%= showConfirmButton %>,
+                timer: <%= timer %>
+            }).then(()=>{
+                window.location ='/<%= ruta %>'
+            })
+         </script>
+    <% } %>
+</body>
+</html>
