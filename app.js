@@ -141,8 +141,6 @@ app.get('/', (req, res) => {
             if(error){
                 return console.log(error);
             }else {
-                req.session.eventos = result[0].id_evento;
-                console.log(req.session.eventos);
                 res.render('index.ejs', {
                     login: true,
                     result: result,
@@ -241,7 +239,7 @@ app.post('/edit', async (req, res)=> {
 
 
 
-
+/* 
   // ELIMINAR EVENTOS
  app.get('/delete', async (req, res) =>{
     const id_evento = req.session.eventos;
@@ -263,7 +261,7 @@ app.post('/edit', async (req, res)=> {
             });
          }
      });
- }); 
+ });  */
 
 app.listen(4000, (req,res) => {
     console.log('Server running in http://localhost:4000');
